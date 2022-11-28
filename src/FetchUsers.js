@@ -28,7 +28,7 @@ const FetchUsers = () => {
   return (
     <>
     
-      <section className='bg-gray-900 py-20 px-10'>
+      <section className='bg-gray-900 py-20 px-10 md:h-screen'>
         {users.map((user) => {
             // destructuring
             const { name:{title, first, last}, location: {
@@ -65,7 +65,8 @@ const FetchUsers = () => {
         } = user
 
             return (
-                <div key={uuid} className="bg-gray-200 px-5 py-10 rounded-lg" >
+                <div key={uuid} className="bg-gray-200 px-5 py-10 rounded-lg lg:w-9/12 lg:mx-auto 2xl:w-1/2 2xl:px-50"
+                >
                     <img className='block mx-auto rounded-full' src={large} alt={first}/>
                     <div className='text-center'>
                         <h3 className='text-2xl my-2'>{title}. {first} {last}</h3>
@@ -78,7 +79,9 @@ const FetchUsers = () => {
                         <p>AGE: {age} Years</p>
                         <div className='underline mx-auto my-5'></div>
                     </div>
-
+                    
+                    <div className='md:flex md:justify-between'>
+                             
                     <div>
                         <p className='flex-items-center mr-3 text-xl my-2'>
                             <AiOutlineMail/> {email}</p>
@@ -90,7 +93,7 @@ const FetchUsers = () => {
                         </p>
                     </div>
 
-                    <div className='mt-10'>
+                    <div className='mt-10 md:mt-0'>
                         <ul>
                             <li>{number}, {name}</li>
                             <li className='flex items-center justify-between my-3'><span className='font-bold'>Country:</span> {country}</li>
@@ -101,6 +104,8 @@ const FetchUsers = () => {
                             <li className='flex items-center justify-between my-3'><span className="font-bold">Longitude:</span> {longitude}</li>
                             <li>{offset}, {description}</li>
                         </ul>
+                    </div>
+
                     </div>
                 </div>
             )
